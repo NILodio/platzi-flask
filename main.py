@@ -1,13 +1,14 @@
-# -*- coding: utf-8 -*-
-# @Author: Danilo Diaz Valencia
-# @Date:   2022-03-22 10:05:23
-# @Last Modified by:   Danilo Diaz Valencia
-# @Last Modified time: 2022-03-22 10:22:21
 from flask import Flask, request, make_response, redirect, render_template
 
 app = Flask(__name__)
 
-todos = ['Comprar cafe', 'Enviar solicitud de compra', 'Entregar video a productor ']
+todos = ['Comprar cafe', 'Enviar solicitud de compra',
+         'Entregar video a productor ']
+
+
+@app.errorhandler(404)
+def not_found(error):
+    return render_template('404.html', error=error)
 
 
 @app.route('/')
