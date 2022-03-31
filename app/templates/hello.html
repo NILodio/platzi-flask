@@ -5,7 +5,7 @@
 {% block title %}
     {{ super() }}
     Bienvenido
-{% endblock %}
+{% endblock title %}
 
 {% block content %}
     {% if username %}
@@ -23,4 +23,4 @@
             {{ macros.render_todo(todo) }}
         {% endfor %}
     </ul>
-{% endblock %}
+{% endblock content %}
